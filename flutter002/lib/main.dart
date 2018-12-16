@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'model/post.dart';
+import 'demo/ListView_demo.dart';
+import 'demo/Drawer_demo.dart';
+import 'demo/bottom_navigation_bar_demo.dart';
 
 void main() => runApp(App());
 
@@ -8,9 +11,12 @@ class App extends StatelessWidget{
     Widget build(BuildContext context) {
       // TODO: implement build
       return MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: Home(),
         theme: ThemeData(
-          primarySwatch: Colors.yellow
+          primarySwatch: Colors.yellow,
+          highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
+          splashColor: Colors.white70
         ),
       );
     }
@@ -18,44 +24,57 @@ class App extends StatelessWidget{
 
 class Home extends StatelessWidget{
 
-  Widget _listItemBuilder(BuildContext context,int index) {
-    return Container(
-      color: Colors.white,
-      margin: EdgeInsets.all(8.0),
-      child: Column(
-        children: <Widget>[
-          Image.network(posts[index].imageUrl),
-          SizedBox(height: 16.0,),
-          Text(
-            posts[index].title,
-            style: Theme.of(context).textTheme.title,
-          ),
-          Text(
-            posts[index].author,
-            style: Theme.of(context).textTheme.subhead,
-          ),
-          SizedBox(height: 16.0,)
-        ],
-      ),
-    );
-  }
-
   @override
     Widget build(BuildContext context) {
+      
       // TODO: implement build
-      return Scaffold(
-        backgroundColor: Colors.grey[100],
-        appBar: AppBar(
-          title: Text('CrazyAndy'),
-          elevation: 1.0,
-        ),
-        body: ListView.builder(
-          itemCount: posts.length,
-          itemBuilder: _listItemBuilder,
+      return DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          backgroundColor: Colors.grey[100],
+          appBar: AppBar(
+            // leading: IconButton(
+            //   icon: Icon(Icons.menu),
+            //   tooltip: 'Navigation',
+            //   onPressed: ()=>debugPrint('Navigation button is pressed.'),
+            // ),
+            title: Text('CrazyAndy'),
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(Icons.search),
+                tooltip: 'Search',
+                onPressed: ()=>debugPrint('Search button is pressed.'),
+              )
+            ],
+            elevation: 0.0,
+            bottom: TabBar(
+              unselectedLabelColor: Colors.black38,
+              indicatorColor: Colors.black54,
+              indicatorSize: TabBarIndicatorSize.label,
+              indicatorWeight: 1.0,
+              tabs: <Widget>[
+                Tab(icon: Icon(Icons.local_florist)),
+                Tab(icon: Icon(Icons.change_history)),
+                Tab(icon: Icon(Icons.directions_bike)),
+              ],
+            ),
+          ),
+          // body: ListViewDemo(),
+          body: TabBarView(
+            children: <Widget>[
+              ListViewDemo(),
+              Icon(Icons.change_history,size:128.0,color:Colors.black12),
+              Icon(Icons.directions_bike,size:128.0,color:Colors.black12),
+            ],
+          ),
+          drawer: DrawerDemo(),
+          bottomNavigationBar: BottomNavigationBarDemo() ,
         ),
       );
     }
 }
+
+
 
 class Hello extends StatelessWidget{
 
