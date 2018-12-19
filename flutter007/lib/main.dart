@@ -7,8 +7,11 @@ import 'demo/basic_demo.dart';
 import 'demo/layout_demo.dart';
 import 'demo/view_demo.dart';
 import 'demo/sliver_demo.dart';
+import 'demo/navigator_demo.dart';
 
 void main() => runApp(App());
+
+
 
 class App extends StatelessWidget{
   @override
@@ -16,7 +19,13 @@ class App extends StatelessWidget{
       // TODO: implement build
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Home(),
+        // home: Home(),
+        // home:NavigatorDemo(),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => Home(),
+          '/about':(context) => Page(title: 'About',)
+        },
         theme: ThemeData(
           primarySwatch: Colors.yellow,
           highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
