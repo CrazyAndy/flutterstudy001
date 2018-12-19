@@ -18,7 +18,7 @@ class PostShow extends StatelessWidget {
         children: <Widget>[
           Image.network(post.imageUrl),
           Container(
-            padding: EdgeInsets.all(32.0),
+            padding: EdgeInsets.all(12.0),
             width: double.infinity,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,7 +31,7 @@ class PostShow extends StatelessWidget {
                   '${post.author}',
                   style: Theme.of(context).textTheme.subhead,
                 ),
-                SizedBox(height: 32.0,),
+                SizedBox(height: 12.0,),
                 Text(
                   '${post.description}',
                   style: Theme.of(context).textTheme.body1,
