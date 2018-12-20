@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../demo/button_demo.dart';
 import '../demo/popup_menu_button_demo.dart';
+import '../demo/form_demo.dart';
+import '../demo/checkbox_demo.dart';
+import '../demo/switch_demo.dart';
+import '../demo/slider_demo.dart';
+import '../demo/datetime_demo.dart';
 
 class MaterialConponents extends StatelessWidget {
   @override
@@ -13,6 +18,26 @@ class MaterialConponents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(
+            title: 'DateTimeDemo',
+            page: DateTimeDemo(),
+          ),
+          ListItem(
+            title: 'SliderDemo',
+            page: SliderDemo(),
+          ),
+          ListItem(
+            title: 'SwitchDemo',
+            page: SwitchDemo(),
+          ),
+          ListItem(
+            title: 'CheckBoxDemo',
+            page: CheckBoxDemo(),
+          ),
+          ListItem(
+            title: 'FormDemo',
+            page: FormDemo(),
+          ),
           ListItem(
             title: 'PopupMenuButton',
             page: PopupMenuDemo(),
@@ -30,8 +55,6 @@ class MaterialConponents extends StatelessWidget {
     );
   }
 }
-
-
 
 class _WidgetDemo extends StatelessWidget {
   @override
