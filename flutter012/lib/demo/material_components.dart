@@ -12,7 +12,11 @@ import '../demo/alert_dialog_demo.dart';
 import '../demo/bottom_sheet_demo.dart';
 import '../demo/snack_bar_demo.dart';
 import '../demo/expansion_panel_demo.dart';
-
+import '../demo/chip_demo.dart';
+import '../demo/data_table_demo.dart';
+import '../demo/paginate_data_table_demo.dart';
+import '../demo/card_demo.dart';
+import '../demo/stepper_demo.dart';
 
 
 class MaterialConponents extends StatelessWidget {
@@ -25,6 +29,26 @@ class MaterialConponents extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(
+            title: 'StepperDemo',
+            page: StepperDemo(),
+          ),
+          ListItem(
+            title: 'CardDemo',
+            page: CardDemo(),
+          ),
+          ListItem(
+            title: 'PaginateDataTableDemo',
+            page: PaginateDataTableDemo(),
+          ),
+          ListItem(
+            title: 'DataTableDemo',
+            page: DataTableDemo(),
+          ),
+          ListItem(
+            title: 'ChipDemo',
+            page: ChipDemo(),
+          ),
           ListItem(
             title: 'ExpansionPanelDemo',
             page: ExpansionPanelDemo(),
