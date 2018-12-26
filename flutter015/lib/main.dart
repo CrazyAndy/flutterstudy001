@@ -13,6 +13,7 @@ import 'demo/material_components.dart';
 import 'demo/state/state_management_demo.dart';
 import 'demo/state/scope_model_demo.dart';
 import 'demo/stream/stream_demo.dart';
+import 'demo/rxdart/rxdart_demo.dart';
 
 void main() => runApp(App());
 
@@ -26,7 +27,7 @@ class App extends StatelessWidget{
         debugShowCheckedModeBanner: false,
         // home: Home(),
         // home:NavigatorDemo(),
-        initialRoute: '/stream',
+        initialRoute: '/rxdart',
         routes: {
           '/': (context) => Home(),
           '/about':(context) => Page(title: 'About',),
@@ -35,6 +36,7 @@ class App extends StatelessWidget{
           '/state-management':(context) => StateManagementDemo(),
           '/scope':(context) => ScopeModelDemo(),
           '/stream':(context) => StreamDemo(),
+          '/rxdart':(context) => RxDartDemo(),
         },
         theme: ThemeData(
           primarySwatch: Colors.blue,
