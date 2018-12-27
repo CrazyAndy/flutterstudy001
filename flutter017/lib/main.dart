@@ -15,6 +15,7 @@ import 'demo/state/scope_model_demo.dart';
 import 'demo/stream/stream_demo.dart';
 import 'demo/rxdart/rxdart_demo.dart';
 import 'demo/bloc/bloc_demo.dart';
+import 'demo/http/http_demo.dart';
 
 void main() => runApp(App());
 
@@ -28,7 +29,7 @@ class App extends StatelessWidget{
         debugShowCheckedModeBanner: false,
         // home: Home(),
         // home:NavigatorDemo(),
-        initialRoute: '/bloc',
+        initialRoute: '/http',
         routes: {
           '/': (context) => Home(),
           '/about':(context) => Page(title: 'About',),
@@ -38,7 +39,8 @@ class App extends StatelessWidget{
           '/scope':(context) => ScopeModelDemo(),
           '/stream':(context) => StreamDemo(),
           '/rxdart':(context) => RxDartDemo(),
-          '/bloc':(context)=> BlocDemo()
+          '/bloc':(context)=> BlocDemo(),
+          '/http':(context)=> HttpDemo(),
         },
         theme: ThemeData(
           primarySwatch: Colors.blue,
